@@ -5,20 +5,17 @@ extends Spatial
 # var b = "textvar"
 
 func _ready():
-	$Panel.hide()
-	$Panel2.hide()
+	$WinPanel.hide()
+	$LosePanel.hide()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
 
-
-func _on_Area_body_entered(body):
+func _on_Egg_body_entered(body):
 	if body is KinematicBody:
-		$Panel.show()
+		$WinPanel.show()
 
-
-func _on_Area2_body_entered(body):
-	if body is KinematicBody:
-		$Panel2.show()
+func _on_Chicken_lose():
+	$LosePanel.show()
